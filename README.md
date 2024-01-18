@@ -1,191 +1,35 @@
-# yolov8-detect-annotator
-YOLOv8 Detect Annotator - це інструмент, призначений для автоматизації анотування зображень за допомогою попередньо навченої моделі YOLOv8, що спрощує завдання виявлення та анотування об'єктів для полегшення подальшого навчання.
-
-
-
-
-
-
-
-
-###Передісторія
-Клонуйте сховище на локальний комп'ютер:
-
-
-
-
-
-
-
-
-```bash
-git clone https://github.com/kotdanissimo/yolov8-detect-annotator
-```
-Модель YOLOv8 або кастомна модель: Завантажте ваги моделі YOLOv8 (наприклад, 'yolov8.pt') з [офіційного репозиторію](https://github.com/ultralytics/ultralytics), або використовувати власну модель, навчену на його основі.
-
-
-
-
-
-
-
-
-Середовище Python: Переконайтеся, що у вашій системі встановлено Python. Ми рекомендуємо використовувати Python 3.
-
-
-
-
-
-
-
-
-Залежності: Встановіть необхідні пакунки Python за допомогою запуску:
-
-
-
-
-
-
-
+Dependencies: Install the required Python packages using startup:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-
-
-
-
-
-
-
-або
-
-
-
-
-
-
-
+or
 
 ```bash
 pip install opencv-python
 ```
 
+Entering images: Prepare a folder with the images you want to annotate.
 
+Configuration and customization: Customize the scenario configuration (e.g., I/O paths, model name) to meet your specific settings, including specifying a custom model if applicable.
 
+GPU support is optional: if possible, consider using a GPU for faster processing. Configure your device settings accordingly.
 
-
-
-
-
-Введення зображень: Підготуйте папку із зображеннями, які ви хочете анотувати.
-
-
-
-
-
-
-
-
-Конфігурація та кастомізація: Налаштуйте конфігурацію сценарію (наприклад, шляхи вводу/виводу, назву моделі) відповідно до ваших конкретних налаштувань, включаючи вказівку користувацької моделі, якщо це можливо.
-
-
-
-
-
-
-
-
-Підтримка графічного процесора не є обов'язковою: якщо можливо, розгляньте можливість використання графічного процесора для швидшої обробки. Налаштуйте параметри вашого пристрою відповідним чином.
-
-
-
-
-
-
-
-
-Каталог виведення міток: Переконайтеся, що каталог для зберігання анотованих міток існує, або дозвольте скрипту створити його.
-
-
-
-
-
-
-
-
-###Використовуйте
-Після виконання всіх необхідних умов виконайте [detect_annotator.py](detect_annotator.py), замінивши заповнювачі (data_folder, output_folder, trained_model, device_type) на ваші конкретні значення.
-Скрипт автоматично виявить об'єкти на зображеннях, використовуючи вашу модель YOLOv8, і згенерує файли анотацій у вказаному вихідному каталозі.# yolov8-detect-annotator
-YOLOv8 Detect Annotator - це інструмент, призначений для автоматизації анотування зображень за допомогою попередньо навченої моделі YOLOv8, що спрощує завдання виявлення та анотування об'єктів для полегшення подальшого навчання.
-
-
-
-
-###Передісторія
-Клонуйте сховище на локальний комп'ютер:
-
-
-
-
-```bash
-git clone https://github.com/kotdanissimo/yolov8-detect-annotator
-```
-Модель YOLOv8 або кастомна модель: Завантажте ваги моделі YOLOv8 (наприклад, 'yolov8.pt') з [офіційного репозиторію](https://github.com/ultralytics/ultralytics), або використовувати власну модель, навчену на його основі.
-
-
-
-
-Середовище Python: Переконайтеся, що у вашій системі встановлено Python. Ми рекомендуємо використовувати Python 3.
-
-
-
-
-Залежності: Встановіть необхідні пакунки Python за допомогою запуску:
-
-
-
+Dependencies: Install the required Python packages using startup:
 
 ```bash
 pip install -r requirements.txt
 ```
-
-
-
-
-або
-
-
-
+or
 
 ```bash
 pip install opencv-python
 ```
 
+Entering images: Prepare a folder with the images you want to annotate.
 
+Configuration and customization: Customize the scenario configuration (e.g., I/O paths, model name) to meet your specific settings, including specifying a custom model if applicable.
 
+GPU support is optional: if possible, consider using a GPU for faster processing. Configure your device settings accordingly.
 
-Введення зображень: Підготуйте папку із зображеннями, які ви хочете анотувати.
-
-
-
-
-Конфігурація та кастомізація: Налаштуйте конфігурацію сценарію (наприклад, шляхи вводу/виводу, назву моделі) відповідно до ваших конкретних налаштувань, включаючи вказівку користувацької моделі, якщо це можливо.
-
-
-
-
-Підтримка графічного процесора не є обов'язковою: якщо можливо, розгляньте можливість використання графічного процесора для швидшої обробки. Налаштуйте параметри вашого пристрою відповідним чином.
-
-
-
-
-Каталог виведення міток: Переконайтеся, що каталог для зберігання анотованих міток існує, або дозвольте скрипту створити його.
-
-
-
-
-###Використовуйте
-Після виконання всіх необхідних умов виконайте [detect_annotator.py](detect_annotator.py), замінивши заповнювачі (data_folder, output_folder, trained_model, device_type) на ваші конкретні значення.
-Скрипт автоматично виявить об'єкти на зображеннях, використовуючи вашу модель YOLOv8, і згенерує файли анотацій у вказаному вихідному каталозі.
