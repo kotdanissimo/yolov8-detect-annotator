@@ -1,3 +1,7 @@
+  # yolov8-detect-annotator
+  
+YOLOv8 Detect Annotator is a tool designed for automated image annotation using a pre-trained YOLOv8 model, streamlining object detection and annotation tasks to facilitate further training.
+
   ### Prerequisites
 
 YOLOv8 Model or Custom Model: Download the YOLOv8 model weights (e.g., 'yolov8.pt') from the [official repository](https://github.com/ultralytics/ultralytics), or use your own model trained on its basis.
