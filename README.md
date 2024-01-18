@@ -1,6 +1,6 @@
   # yolov8-detect-annotator
   
-  YOLOv8 Detect Annotator is a tool designed for automated image annotation using a pre-trained YOLOv8 model, streamlining object detection and annotation tasks to facilitate further training.
+YOLOv8 Detect Annotator is a tool designed for automated image annotation using a pre-trained YOLOv8 model, streamlining object detection and annotation tasks to facilitate further training.
 
   ### Prerequisites
 
@@ -28,7 +28,9 @@ Optional GPU Support: If available, consider using a GPU for faster processing. 
 
 Label Output Directory: Make sure the directory for storing annotated labels exists or let the script create it.
 
- ### Usage
+  ### Usage
 After fulfilling all the prerequisites, run the [detect_annotator.py](detect_annotator.py) script, replacing the placeholders (data_folder, output_folder, trained_model, device_type) with your specific values.
 The script will automatically detect objects in the images using your YOLOv8 model and generate annotation files in the specified output directory.
 
+  ## License
+This project is licensed under the AGPL-3.0 license because it includes modified or borrowed annotation features from Ultralytics, which is also licensed under the AGPL-3.0. Please refer to the [LICENSE](LICENSE) file for more information.
