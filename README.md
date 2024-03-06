@@ -6,7 +6,9 @@ YOLOv8 Detect Annotator is a tool designed for automated image annotation using 
 
 #### Prerequisites:
 
+
 - Python Environment: Ensure you have Python installed on your system. We recommend using Python 3.
+
 
 - Script Download: Download the [main.py](main.py) script and ensure it's in the same directory as your project.
 
@@ -20,6 +22,15 @@ YOLOv8 Detect Annotator is a tool designed for automated image annotation using 
 >
 >```bash
 >pip install opencv-python
+>```
+
+
+###### OR
+
+#### Clone the repository to your local machine:
+
+>```bash
+>git clone https://github.com/kotdanissimo/OBS-Video-Capture
 >```
 
 - YOLOv8 Model or Custom Model: Download the YOLOv8 model weights (e.g., 'yolov8.pt') from the [official repository](https://github.com/ultralytics/ultralytics), or use your own model trained on its basis.
