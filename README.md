@@ -8,7 +8,7 @@ YOLOv8 Detect Annotator is a tool designed for automated image annotation using 
 
 - Python Environment: Ensure you have Python installed on your system. We recommend using Python 3.
 
-- Script Download: Download the [detect_annotator.py](detect_annotator.py) script and ensure it's in the same directory as your project.
+- Script Download: Download the [detect_annotator.py](main.py) script and ensure it's in the same directory as your project.
 
 - Dependencies: Install the required Python packages by running:
 
@@ -35,7 +35,7 @@ YOLOv8 Detect Annotator is a tool designed for automated image annotation using 
 ---
 
 #### Usage
-After fulfilling all the prerequisites, run the [detect_annotator.py](detect_annotator.py) script, replacing the placeholders (input_folder, output_folder, model_weights, device_type) with your specific values.
+After fulfilling all the prerequisites, run the [detect_annotator.py](main.py) script, replacing the placeholders (input_folder, output_folder, model_weights, device_type) with your specific values.
 The script will automatically detect objects in the images using your YOLOv8 model and generate annotation files in the specified output directory.
 
 ---
