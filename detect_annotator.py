@@ -1,43 +1,59 @@
 import os
 from pathlib import Path
 
-# Ultralytics YOLO 🚀, AGPL-3.0 license
 from ultralytics import YOLO
 
 
-"""
-Detects objects in images using a YOLO model and saves the annotations in a specified directory.
+# Function to annotate detections from YOLO model
+def detect_annotator(
+        data: str = 'data/images',
+        output_dir: str = 'output',
+        det_model: str = 'data/best.pt',
+        used_device: dict = 'CPU'
+):
 
-Args:
-    data (str): Path to the folder containing images for detection.
-    output_dir (str | None, optional): Directory to save the annotation results.
-        If None, a 'labels' folder will be created in the same directory as 'data'.
-    det_model (str, optional): Pre-trained YOLO detection model. Defaults to 'best.pt'.
-    device (str, optional): Device to run the model on. Defaults to 'CPU'.
-"""
+    """
+    This function takes in the path to the data, the output directory, the detection model, and the device to run the model on.
+    It then runs the model on the data and writes the detection results to the output directory.
 
+    :param data: str, path to the data to be annotated, default is 'test/data/images'
+    :param output_dir: str, path to the directory where the annotated data will be saved, default is None
+    :param det_model: str, path to the trained YOLO model, default is 'best.pt'
+    :param used_device: str, device to run the model on, default is 'CPU' or int, to use GPU
+    :return: None
+    """
 
-def detect_annotator(data='test/data/images', output_dir=None, det_model='best.pt', device='CPU'):
-    # Initialize the YOLO detection model
+    # Load the YOLO model
     det_model = YOLO(det_model)
 
-    # Set the path for data and create the output directory if not specified
+    # Set the data path and output directory
     data_path = Path(data)
     if not output_dir:
-        output_dir = data_path.parent / 'labels'
-    os.makedirs(output_dir, exist_ok=True)
+        output_dir = data_path.parent / 'output'
 
-    # Perform object detection on the images
-    det_results = det_model(data_path, stream=True, device=device)
+    os.makedirs(
+        output_dir,
+        exist_ok=True
+    )
 
-    # Save annotations for each detected object
+    # Run the model on the data
+    det_results = det_model(
+        data_path,
+        stream=True,
+        device=used_device
+    )
+
+    # Iterate over the detection results
     for result in det_results:
+        # Get the class IDs and bounding boxes
         class_ids = result.boxes.cls.int().tolist()
         boxes = result.boxes.xywhn
 
+        # Get the image filename and create the annotation filename
         img_filename = os.path.splitext(os.path.basename(result.path))[0]
         ann_filename = img_filename + '.txt'
 
+        # If there are detections, write them to the annotation file
         if len(class_ids):
             with open(os.path.join(output_dir, ann_filename), 'w') as f:
                 for class_id, box in zip(class_ids, boxes):
@@ -46,17 +62,4 @@ def detect_annotator(data='test/data/images', output_dir=None, det_model='best.p
 
 
 if __name__ == "__main__":
-    ''' Uncomment and modify these lines if your values differ from the default ones '''
-    # data_folder = ''
-    # output_folder = ''
-    # trained_model = ''
-    # device_type = ''
-
-    # Call the detect_annotator function with the specified parameters
-    detect_annotator(
-        ''' Uncomment and modify these lines if your values differ from the default ones '''
-        # data_folder,
-        # output_dir=output_folder,
-        # det_model=trained_model,
-        # device=device_type
-    )
+    detect_annotator()
